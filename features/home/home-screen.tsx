@@ -1,7 +1,11 @@
 "use client";
 
-import { FC } from "react";
+import { FC, Suspense } from "react";
 
 export const HomeScreen: FC = () => {
-  return <div>HomeScreen</div>;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <div className="">Home page</div>
+    </Suspense>
+  );
 };

@@ -1,9 +1,5 @@
-import { Suspense } from "react";
+import { HomeScreen } from "@/features/home/home-screen";
 
 export default function Page() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <div className="">Home page</div>
-    </Suspense>
-  );
+  return <HomeScreen />;
 }
