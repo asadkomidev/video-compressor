@@ -1,8 +1,11 @@
 import { cn } from "@/lib/utils";
 import { FC, ReactNode } from "react";
 
-export const Main: FC<{ children: ReactNode }> = ({ children }) => {
-  return <main className={cn("")}>{children}</main>;
+export const Main: FC<{ children: ReactNode; className?: string }> = ({
+  children,
+  className,
+}) => {
+  return <main className={cn("", className)}>{children}</main>;
 };
 
 export const Container: FC<{ children: ReactNode; className?: string }> = ({
@@ -10,7 +13,7 @@ export const Container: FC<{ children: ReactNode; className?: string }> = ({
   className,
 }) => {
   return (
-    <div className={cn("mx-auto max-w-7xl px-4", className)}>{children}</div>
+    <div className={cn("mx-auto max-w-6xl px-4", className)}>{children}</div>
   );
 };
 
@@ -21,9 +24,14 @@ export const Header: FC<{ children: ReactNode; className?: string }> = ({
   return <header className={cn("", className)}>{children}</header>;
 };
 
-export const Section: FC<{ children: ReactNode; className?: string }> = ({
-  children,
-  className,
-}) => {
-  return <section className={cn("", className)}>{children}</section>;
+export const Section: FC<{
+  children: ReactNode;
+  className?: string;
+  id?: string;
+}> = ({ children, className, id }) => {
+  return (
+    <section id={id} className={cn("", className)}>
+      {children}
+    </section>
+  );
 };

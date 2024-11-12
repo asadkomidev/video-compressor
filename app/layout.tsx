@@ -6,6 +6,7 @@ import { Toaster } from "sonner";
 import { DrawerProvider } from "@/providers/drawer-provider";
 import { ModalProvider } from "@/providers/modal-provider";
 import { Suspense } from "react";
+import { ThemeProvider } from "@/providers/theme-provider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,12 +33,18 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <Suspense fallback={<div>Loading...</div>}>
-          {children}
-          <DrawerProvider />
-          <ModalProvider />
-          <Toaster />
-        </Suspense>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange>
+          <Suspense fallback={<div>Loading...</div>}>
+            {children}
+            <DrawerProvider />
+            <ModalProvider />
+            <Toaster />
+          </Suspense>
+        </ThemeProvider>
       </body>
     </html>
   );
