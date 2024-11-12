@@ -32,7 +32,7 @@ export const Display: React.FC<VideoDisplayProps> = ({
   });
 
   return (
-    <div className="relative w-full bg-background rounded-2xl dark:border">
+    <div className="relative w-full bg-background rounded-2xl border">
       {/* Video Element */}
       <video
         id="video-display"
