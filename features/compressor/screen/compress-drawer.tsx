@@ -10,6 +10,7 @@ import {
   DrawerTitle,
 } from "@/components/ui/drawer";
 import { CompressorDrawerProps } from "@/props";
+import ThemeToggle from "@/components/shared/theme-toggle";
 
 export const CompressorDrawer: FC<CompressorDrawerProps> = ({
   children,
@@ -20,7 +21,7 @@ export const CompressorDrawer: FC<CompressorDrawerProps> = ({
 }) => {
   return (
     <Drawer open={open} onOpenChange={onOpenChange}>
-      <DrawerContent className="rounded-t-2xl bg-accent ">
+      <DrawerContent className="rounded-t-2xl bg-background ">
         <DrawerHeader>
           <DrawerTitle>{title}</DrawerTitle>
           <DrawerDescription>{description}</DrawerDescription>
@@ -37,6 +38,7 @@ export const CompressorDrawer: FC<CompressorDrawerProps> = ({
             <Link href="https://x.com/asadkomi">
               <FaXTwitter className="w-4 h-4" />
             </Link>
+            <ThemeToggle />
           </div>
         </div>
       </DrawerContent>

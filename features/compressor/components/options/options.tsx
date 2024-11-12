@@ -31,7 +31,7 @@ export const Options: FC = () => {
   const isProcessing = status === "processing";
 
   return (
-    <div className="col-span-1 h-full mt-4 lg:mt-0">
+    <div className="col-span-1 h-full mt-4 lg:mt-0 bg-background">
       <div className="justify-between flex flex-col h-full">
         <div>
           <div className="flex flex-col">
